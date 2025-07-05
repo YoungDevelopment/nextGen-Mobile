@@ -16,7 +16,7 @@ export default function QRScanner() {
         fps: 10,
         qrbox: { width: 250, height: 250 },
       },
-      /* verbose */ false
+      false
     );
 
     scanner.render(
@@ -35,13 +35,19 @@ export default function QRScanner() {
   }, [scannedData]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-      <h1 className="text-2xl font-bold mb-4 text-black">QR Code Scanner</h1>
+    <div
+      className="min-h-screen flex flex-col items-center justify-center p-4"
+      style={{ backgroundColor: "black" }}
+    >
+      <h1 className="text-2xl font-bold mb-4 text-white">QR Code Scanner</h1>
 
       {scannedData ? (
-        <div className="bg-white p-4 rounded shadow w-full max-w-md text-center">
-          <p className="font-semibold text-black">Scanned Data:</p>
-          <p className="break-words text-black">{scannedData}</p>
+        <div
+          className="p-4 rounded shadow w-full max-w-md text-center"
+          style={{ backgroundColor: "black" }}
+        >
+          <p className="font-semibold text-white">Scanned Data:</p>
+          <p className="break-words text-white">{scannedData}</p>
         </div>
       ) : (
         <div id="qr-reader" ref={scannerRef} className="w-full max-w-md" />

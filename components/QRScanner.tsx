@@ -34,7 +34,7 @@ export default function QRScanner({ uid }: { uid: string | null }) {
   useEffect(() => {
     if (scannedData && uid && mobileIp) {
       fetch(
-        "http://rnxou-2400-adc5-142-6f00-244d-3b1d-fd1d-b579.a.free.pinggy.link/decrypt_otp",
+        "https://next-gen-backend-plum.vercel.app/decrypt_otp",
         {
           method: "POST",
           headers: {
